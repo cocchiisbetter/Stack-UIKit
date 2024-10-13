@@ -44,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131AA4F82CBBC11600717361 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B780402CBBC188004FF3C9 /* DemoStack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1382777F2CBBB633004EA021 = {
 			isa = PBXGroup;
 			children = (
@@ -51,16 +59,7 @@
 				138277A72CBBB693004EA021 /* Resource */,
 				138277AB2CBBB693004EA021 /* Source */,
 				131AA4F82CBBC11600717361 /* Products */,
-
 			);
-			sourceTree = "<group>";
-		};
-		131AA4F82CBBC11600717361 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				13B780402CBBC188004FF3C9 /* DemoStack.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

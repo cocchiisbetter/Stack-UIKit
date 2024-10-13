@@ -1,6 +1,9 @@
 // Copyright © 2024 Cocchi is better. All rights reserved.
 
 import UIKit
+import StackUIKit
+
+typealias Stack = StackUIKit.Stack
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
