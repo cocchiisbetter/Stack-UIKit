@@ -38,8 +38,7 @@ public extension Stack {
 
     func layout(in rect: CGRect) {
         let calc = FrameCalculator(stack: self, rect: rect.inset(by: insets))
-        calc.calculate()
-        calc.apply()
+        calc.calculate().apply()
 
         targetRect = rect
         actualRect = calc.lassoRect
