@@ -2,11 +2,19 @@
 
 Stack for UIKit.
 
+# Installation
+
+Only SwiftPM is supported.
+
 # Usage
 
-### Integrate with UIViewController
+### A. Inherit the StackView 
 
-If you prefer
+
+
+### B. Define and use a Stack directly
+
+You can write the layout without inheriting the StackView.
 
 ```swift
 class ABCViewController: UIViewController {
@@ -14,7 +22,7 @@ class ABCViewController: UIViewController {
     lazy var labelB: UILabel = { /* ... */ }()
     lazy var labelC: UILabel = { /* ... */ }()
 
-    // 1. Describe views & stacks hierarchy.
+    // 1. Define the views & stacks hierarchy.
     lazy var rootStack: Stack = {
         let v = Stack(.vertical)
         v.items = [
@@ -45,12 +53,8 @@ class ABCViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        // 3. Hook .layout(in: ) to layout views & stacks under the root stack.
+        // 3. Hook .layout(in:) to layout views & stacks under the root stack.
         rootStack.layout(in: view.bounds)
     }
 }
 ```
-
-# Installation
-
-Only SwiftPM is supported.
