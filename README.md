@@ -11,7 +11,7 @@ Only SwiftPM is supported.
 
 
 
-### B. Define and use a Stack directly
+### B. Define and use the Stack directly
 
 You can write the layout without inheriting the StackView.
 
