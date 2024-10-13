@@ -13,11 +13,12 @@ import UIKit.UIGeometry
         self.estimates = stack.items.map { Estimate($0) }
     }
 
-    func calculate() {
+    @discardableResult func calculate() -> FrameCalculator {
         calcLeastSpaces()
         calcItemSizes()
         calcActualSpaces()
         calcFrames()
+        return self
     }
 
     func apply() {

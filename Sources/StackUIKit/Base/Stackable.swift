@@ -25,10 +25,12 @@ extension Stack: Stackable {
 
     public func calculatedSize(_ fitSize: CGSize) -> CGSize {
         let rect = CGRect(origin: .zero, size: fitSize).inset(by: insets)
-        let calc = FrameCalculator(stack: self, rect: rect)
-        calc.calculate()
 
-        return calc.lassoRect.inset(by: insets.inverted()).size
+        return FrameCalculator(stack: self, rect: rect)
+            .calculate()
+            .lassoRect
+            .inset(by: insets.inverted())
+            .size
     }
 }
 
