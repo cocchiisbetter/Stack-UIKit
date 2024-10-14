@@ -1,0 +1,24 @@
+{
+  "originHash" : "8c129d0357a46608eca2b91db0a1e2a7c508350c4623e132ba92d968af0021b0",
+  "pins" : [
+    {
+      "identity" : "layout-uikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cocchiisbetter/Layout-UIKit.git",
+      "state" : {
+        "revision" : "2a9f18caa3f4941df52184782c9b4cc4641a3665",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "stack-uikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cocchiisbetter/Stack-UIKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b4ca59940799cf879a386dba1f0faf5b187cfd0f"
+      }
+    }
+  ],
+  "version" : 3
+}
