@@ -3,12 +3,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    enum Content: String, CaseIterable {
+    enum Item: String, CaseIterable {
+        case abc
         case login
         case nesting
 
         func viewController() -> UIViewController {
             switch self {
+            case .abc:
+                return ABCViewController()
+
             case .login:
                 return LoginViewController()
 
@@ -17,9 +21,10 @@ class HomeViewController: UIViewController {
             }
         }
 
-        var title: String { rawValue.capitalized }
+        var title: String { rawValue.uppercased() }
     }
-    let contents = Content.allCases
+
+    let items = Item.allCases
 
     lazy var tableView: UITableView = {
         let v = UITableView(frame: .zero, style: .plain)
@@ -38,8 +43,8 @@ class HomeViewController: UIViewController {
         view.addSubview(tableView)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
@@ -74,13 +79,13 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contents.count
+        items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = contents[indexPath.row].title
+        cell.textLabel?.text = items[indexPath.row].title
 
         return cell
     }
@@ -88,7 +93,9 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = contents[indexPath.row].viewController()
+        let item = items[indexPath.row]
+        let vc = item.viewController()
+        vc.title = item.title
         navigationController?.pushViewController(vc, animated: true)
     }
 }
